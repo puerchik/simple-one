@@ -47,17 +47,14 @@ button {
   font: inherit;
 }
 
-html {
+html,
+body {
   height: 100%;
 }
 
 html,
 :has(:target) {
   scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100%;
 }
 
 svg *[fill] {

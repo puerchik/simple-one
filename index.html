@@ -7,45 +7,78 @@
     <title>Simple one</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header__inner container">
-        <a href="#" class="header__logo">
-          <img
-            class="header__logo-img"
-            width="174"
-            height="24"
-            src="./images/logo.svg"
-            alt="Simple one"
-            loading="lazy"
-          />
-        </a>
-        <div class="header__bar">
-          <div class="header__search">
-            <input class="header__search-input input" placeholder="Поиск" type="search" />
-          </div>
-          <div class="header__user">
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__inner container">
+          <a href="#" class="header__logo">
             <img
-              class="header__user-avatar"
-              width="32"
-              height="32"
-              src="./images/avatar.svg"
-              alt="User avatar"
+              class="header__logo-img"
+              width="174"
+              height="24"
+              src="./images/logo.svg"
+              alt="Simple one"
               loading="lazy"
             />
-            <span class="header__user-name">Максим Галактионов</span>
-            <a class="header__user-settings" href="#">
+          </a>
+          <div class="header__bar">
+            <div class="header__search">
+              <input class="header__search-input input" placeholder="Поиск" type="search" />
+            </div>
+            <div class="header__user">
               <img
-                class="header__user-settings-img"
-                width="20"
-                height="20"
-                src="./images/icons/settings.svg"
-                alt="User settings"
+                class="header__user-avatar"
+                width="32"
+                height="32"
+                src="./images/avatar.svg"
+                alt="User avatar"
                 loading="lazy"
               />
-            </a>
+              <span class="header__user-name">Максим Галактионов</span>
+              <a class="header__user-settings" href="#">
+                <img
+                  class="header__user-settings-img"
+                  width="20"
+                  height="20"
+                  src="./images/icons/settings.svg"
+                  alt="User settings"
+                  loading="lazy"
+                />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <main class="main">
+        <aside class="sidebar">
+          <ul class="sidebar__categories-list">
+            <li class="sidebar__categories-item">
+              <button class="sidebar__categories-button" type="button">
+                <img
+                  class="sidebar__categories-img"
+                  width="24"
+                  height="24"
+                  src="/images/icons/sidebar.svg"
+                  alt="show list of navigation links"
+                  loading="lazy"
+                />
+              </button>
+            </li>
+            <li class="sidebar__categories-item">
+              <button class="sidebar__categories-button" type="button">
+                <img
+                  class="sidebar__categories-img"
+                  width="24"
+                  height="24"
+                  src="./images/icons/star.svg"
+                  alt="show featured navigation links"
+                  loading="lazy"
+                />
+              </button>
+            </li>
+          </ul>
+          <ul class="sidebar__content-list"></ul>
+        </aside>
+      </main>
+    </div>
   </body>
 </html>

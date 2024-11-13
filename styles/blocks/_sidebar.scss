@@ -1,0 +1,22 @@
+.sidebar {
+  height: 100%;
+
+  &__categories-list {
+    height: 100%;
+    width: 56px;
+    border-right: var(--border);
+  }
+
+  &__categories-item {
+    padding: 16px;
+    display: flex;
+  }
+
+  &__categories-button {
+    all: unset;
+
+    @include hover {
+      opacity: 0.7;
+    }
+  }
+}
