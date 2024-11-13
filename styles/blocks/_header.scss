@@ -1,8 +1,10 @@
 .header {
-  padding: 12px 0;
+  padding: 7px 0 6px;
+  border-bottom: var(--border);
 
   &__inner {
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -14,18 +16,20 @@
 
   &__search {
     position: relative;
+    width: 296px;
 
     &::after {
       content: '';
       position: absolute;
-      right: 8px;
+      right: 5px;
       top: 50%;
       transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
+      width: 19px;
+      height: 19px;
       background: url('./../../images/icons/search.svg') center/contain no-repeat;
     }
     &-input {
+      width: 100%;
     }
   }
 
@@ -33,5 +37,20 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
+    &-avatar {
+      border-radius: 50%;
+    }
+
+    &-settings {
+      padding: 6px;
+      border: var(--border);
+      border-radius: var(--border-radius);
+      transition: 0.2s;
+
+      @include hover {
+        background-color: var(--color-light-alt);
+      }
+    }
   }
 }

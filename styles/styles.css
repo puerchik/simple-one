@@ -125,6 +125,7 @@ svg * {
   --color-blue-alt: #99d5ff;
   --color-blue-light: #e5f4ff;
   --color-red: #b21f00;
+  --border: 1px solid var(--color-gray);
   --border-radius: 4px;
   --container-width: 1888px;
   --container-padding-x: 16px;
@@ -173,11 +174,39 @@ a {
   color: inherit;
 }
 
+.input {
+  all: unset;
+  box-sizing: border-box;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-light-alt);
+  padding: 6px 8px;
+  transition: 0.2s;
+}
+.input::-moz-placeholder {
+  color: var(--color-gray-alt);
+}
+.input::placeholder {
+  color: var(--color-gray-alt);
+}
+@media (hover: hover) {
+  .input:hover {
+    background-color: var(--color-light);
+  }
+}
+@media (hover: none) {
+  .input:active {
+    background-color: var(--color-light);
+  }
+}
+
 .header {
-  padding: 12px 0;
+  padding: 7px 0 6px;
+  border-bottom: var(--border);
 }
 .header__inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .header__bar {
@@ -187,33 +216,42 @@ a {
 }
 .header__search {
   position: relative;
+  width: 296px;
 }
 .header__search::after {
   content: "";
   position: absolute;
-  right: 8px;
+  right: 5px;
   top: 50%;
   transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  width: 19px;
+  height: 19px;
   background: url("./../../images/icons/search.svg") center/contain no-repeat;
+}
+.header__search-input {
+  width: 100%;
 }
 .header__user {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
-.input {
-  all: unset;
-  border: 1px solid var(--color-gray);
+.header__user-avatar {
+  border-radius: 50%;
+}
+.header__user-settings {
+  padding: 6px;
+  border: var(--border);
   border-radius: var(--border-radius);
-  background-color: var(--color-light-alt);
-  padding: 6px 8px;
+  transition: 0.2s;
 }
-.input::-moz-placeholder {
-  color: var(--color-gray-alt);
+@media (hover: hover) {
+  .header__user-settings:hover {
+    background-color: var(--color-light-alt);
+  }
 }
-.input::placeholder {
-  color: var(--color-gray-alt);
+@media (hover: none) {
+  .header__user-settings:active {
+    background-color: var(--color-light-alt);
+  }
 }/*# sourceMappingURL=styles.css.map */

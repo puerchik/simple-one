@@ -1,12 +1,19 @@
 .input {
   all: unset;
 
-  border: 1px solid var(--color-gray);
+  box-sizing: border-box;
+
+  border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--color-light-alt);
   padding: 6px 8px;
+  transition: 0.2s;
 
   &::placeholder {
     color: var(--color-gray-alt);
+  }
+
+  @include hover {
+    background-color: var(--color-light);
   }
 }
