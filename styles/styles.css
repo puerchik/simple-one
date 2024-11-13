@@ -181,6 +181,9 @@ a {
 .main {
   flex-grow: 1;
 }
+.main__inner {
+  height: 100%;
+}
 
 .input {
   margin: 0;
@@ -292,11 +295,12 @@ a {
 }
 .sidebar__categories-list {
   height: 100%;
-  width: 56px;
+  width: 40px;
   border-right: var(--border);
 }
 .sidebar__categories-item {
   padding: 16px;
+  padding-left: 0;
   display: flex;
 }
 .sidebar__categories-button {

@@ -5,12 +5,13 @@
 
   &__categories-list {
     height: 100%;
-    width: 56px;
+    width: 40px;
     border-right: var(--border);
   }
 
   &__categories-item {
     padding: 16px;
+    padding-left: 0;
     display: flex;
   }
 
@@ -55,9 +56,6 @@
     &-menu {
       flex-grow: 1;
       background-color: var(--color-light-alt);
-
-      &-list {
-      }
 
       &-item {
         padding: 10px 16px;
