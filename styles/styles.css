@@ -126,6 +126,7 @@ svg * {
   --border-radius: 4px;
   --container-width: 1888px;
   --container-padding-x: 16px;
+  --transition-duration: 0.2s;
   --font-family-base: "Open Sans", sans-serif;
 }
 
@@ -182,12 +183,31 @@ a {
 }
 
 .input {
-  all: unset;
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  outline: none;
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--color-light-alt);
   padding: 6px 8px;
+}
+.input[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+.input[type=search]::-webkit-search-decoration {
+  display: none;
+}
+.input[type=search]::-webkit-search-results-button {
+  display: none;
+}
+.input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+.input[type=search]::-ms-clear {
+  display: none;
+  height: 0;
+  width: 0;
 }
 .input::-moz-placeholder {
   color: var(--color-gray-alt);
@@ -203,6 +223,25 @@ a {
 @media (hover: none) {
   .input:active {
     background-color: var(--color-light);
+  }
+}
+
+.icon-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  padding: 6px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+@media (hover: hover) {
+  .icon-button:hover {
+    background-color: var(--color-light-alt);
+  }
+}
+@media (hover: none) {
+  .icon-button:active {
+    background-color: var(--color-light-alt);
   }
 }
 
@@ -238,23 +277,6 @@ a {
   width: 100%;
   padding-right: 30px;
 }
-.header__search-input[type=search]::-webkit-search-cancel-button {
-  display: none;
-}
-.header__search-input[type=search]::-webkit-search-decoration {
-  display: none;
-}
-.header__search-input[type=search]::-webkit-search-results-button {
-  display: none;
-}
-.header__search-input[type=search]::-webkit-search-results-decoration {
-  display: none;
-}
-.header__search-input[type=search]::-ms-clear {
-  display: none;
-  height: 0;
-  width: 0;
-}
 .header__user {
   display: flex;
   align-items: center;
@@ -263,24 +285,10 @@ a {
 .header__user-avatar {
   border-radius: 50%;
 }
-.header__user-settings {
-  padding: 6px;
-  border: var(--border);
-  border-radius: var(--border-radius);
-}
-@media (hover: hover) {
-  .header__user-settings:hover {
-    background-color: var(--color-light-alt);
-  }
-}
-@media (hover: none) {
-  .header__user-settings:active {
-    background-color: var(--color-light-alt);
-  }
-}
 
 .sidebar {
   height: 100%;
+  display: flex;
 }
 .sidebar__categories-list {
   height: 100%;
@@ -292,7 +300,9 @@ a {
   display: flex;
 }
 .sidebar__categories-button {
-  all: unset;
+  padding: 0;
+  background-color: transparent;
+  border: none;
 }
 @media (hover: hover) {
   .sidebar__categories-button:hover {
@@ -301,6 +311,66 @@ a {
 }
 @media (hover: none) {
   .sidebar__categories-button:active {
+    opacity: 0.7;
+  }
+}
+.sidebar__content {
+  display: flex;
+  flex-direction: column;
+  border-right: var(--border);
+}
+.sidebar__content-header {
+  display: flex;
+  gap: 8px;
+  padding: 16px 14px;
+  border-bottom: var(--border);
+}
+.sidebar__content-search {
+  position: relative;
+}
+.sidebar__content-search-input {
+  width: 208px;
+}
+.sidebar__content-search::after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 19px;
+  height: 19px;
+  background: url("./../../images/icons/filter.svg") center/contain no-repeat;
+}
+.sidebar__content-menu {
+  flex-grow: 1;
+  background-color: var(--color-light-alt);
+}
+.sidebar__content-menu-item {
+  padding: 10px 16px;
+}
+.sidebar__content-menu-link {
+  position: relative;
+  display: inline-block;
+  min-height: 20px;
+  padding-left: 24px;
+}
+.sidebar__content-menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 19px;
+  height: 19px;
+  background: url("./../../images/icons/arrow-right.svg") center/contain no-repeat;
+}
+@media (hover: hover) {
+  .sidebar__content-menu-link:hover {
+    opacity: 0.7;
+  }
+}
+@media (hover: none) {
+  .sidebar__content-menu-link:active {
     opacity: 0.7;
   }
 }/*# sourceMappingURL=styles.css.map */

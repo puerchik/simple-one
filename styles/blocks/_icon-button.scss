@@ -1,0 +1,11 @@
+.icon-button {
+  @include reset-button;
+
+  padding: 6px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  @include hover {
+    background-color: var(--color-light-alt);
+  }
+}
