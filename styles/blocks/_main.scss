@@ -1,0 +1,9 @@
+.main {
+  flex-grow: 1;
+
+  &__inner {
+    height: 100%;
+
+    display: flex;
+  }
+}

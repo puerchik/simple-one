@@ -1,0 +1,22 @@
+.button {
+  @include reset-button;
+
+  padding: 6px 12px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  color: var(--color-dark);
+  font-weight: 600;
+
+  &-blue {
+    background-color: var(--color-blue);
+    color: var(--color-light);
+    border: none;
+
+    margin-left: auto;
+  }
+
+  @include hover {
+    opacity: 0.7;
+  }
+}

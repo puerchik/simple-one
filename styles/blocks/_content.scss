@@ -1,0 +1,26 @@
+.content {
+  flex-grow: 1;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    padding-right: 0;
+
+    &-title {
+      color: var(--color-dark);
+      font-family: Montserrat;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    &-actions {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+}

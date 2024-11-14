@@ -25,11 +25,3 @@ a {
   display: flex;
   flex-direction: column;
 }
-
-.main {
-  flex-grow: 1;
-
-  &__inner {
-    height: 100%;
-  }
-}
