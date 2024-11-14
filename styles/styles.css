@@ -415,7 +415,7 @@ a {
 
 .main {
   position: relative;
-  top: 48px;
+  top: 0;
   flex-grow: 1;
 }
 .main__inner {
@@ -459,5 +459,5 @@ a {
 }
 .content__body {
   position: relative;
-  top: 65px;
+  top: 113px;
 }/*# sourceMappingURL=styles.css.map */
