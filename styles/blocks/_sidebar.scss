@@ -1,17 +1,20 @@
 .sidebar {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  width: 336px;
   height: 100%;
-
   display: flex;
+  background-color: var(--color-light);
 
   &__categories-list {
     height: 100%;
-    width: 40px;
+    width: 56px;
     border-right: var(--border);
   }
 
   &__categories-item {
     padding: 16px;
-    padding-left: 0;
     display: flex;
   }
 
@@ -30,7 +33,9 @@
     &-header {
       display: flex;
       gap: 8px;
-      padding: 16px 14px;
+      padding: 15px;
+      padding-right: 14px;
+      padding-bottom: 16px;
       border-bottom: var(--border);
     }
 

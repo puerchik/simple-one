@@ -1,6 +1,12 @@
 .header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 48px;
   padding: 7px 0 6px;
   border-bottom: var(--border);
+  background-color: var(--color-light);
 
   &__inner {
     display: flex;

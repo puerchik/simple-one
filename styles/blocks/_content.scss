@@ -1,12 +1,25 @@
 .content {
+  position: relative;
+  margin-left: 336px;
+  padding: 0 16px;
   flex-grow: 1;
 
   &__header {
+    position: fixed;
+    z-index: 10;
+    top: 48px;
+    right: 0;
+    width: calc(100% - 336px);
     display: flex;
     align-items: center;
     gap: 16px;
     padding: 16px;
-    padding-right: 0;
+    background-color: var(--color-light);
+    box-shadow: none;
+
+    &-scrolled {
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.04);
+    }
 
     &-title {
       color: var(--color-dark);
@@ -22,5 +35,10 @@
       align-items: center;
       gap: 4px;
     }
+  }
+
+  &__body {
+    position: relative;
+    top: 65px;
   }
 }
