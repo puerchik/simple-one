@@ -603,6 +603,13 @@ a {
   border: none;
   background-color: var(--color-light);
 }
+@media (max-width: 767.5px) {
+  .content__modal {
+    top: 0;
+    width: 100%;
+    margin: 0;
+  }
+}
 .content__modal-header {
   position: relative;
   top: 0;
@@ -698,6 +705,7 @@ a {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  line-clamp: 1;
   overflow: hidden;
 }
 .form__select-selected-multiple {

@@ -109,6 +109,12 @@
     border: none;
     background-color: var(--color-light);
 
+    @include tablet {
+      top: 0;
+      width: 100%;
+      margin: 0;
+    }
+
     &-header {
       position: relative;
       top: 0;
