@@ -8,6 +8,11 @@
   border-bottom: var(--border);
   background-color: var(--color-light);
 
+  @include tablet {
+    padding-top: 11px;
+    padding-bottom: 45px;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -18,6 +23,15 @@
     display: flex;
     align-items: center;
     gap: 16px;
+
+    @include tablet {
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    &-categories-button {
+      @include reset-button;
+    }
   }
 
   &__search {
@@ -46,8 +60,17 @@
     align-items: center;
     gap: 8px;
 
+    @include tablet {
+      gap: 14px;
+    }
+
     &-avatar {
       border-radius: 50%;
+
+      @include tablet {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 }

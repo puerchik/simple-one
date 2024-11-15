@@ -1,6 +1,6 @@
 // shadow while scrolling
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', () => {
     const contentHeader = document.querySelector('.content__header')
 
     if (window.scrollY > 10) {
@@ -80,3 +80,19 @@ dialogOpener.addEventListener('click', openModalAndLockScroll)
 dialogCloseButton.addEventListener('click', () => { dialog.close() })
 dialog.addEventListener('close', returnScroll)
 dialog.addEventListener('click', closeOnBackDropClick)
+
+// kebab menu
+
+document.getElementById('kebabMenu').addEventListener('click', () => {
+    const dropdown = document.getElementById('dropdownContent')
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
+})
+
+window.addEventListener('click', event => {
+    if (!event.target.matches('.kebab-menu') && !event.target.matches('.kebab-menu span')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content")
+        for (let i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].style.display = "none"
+        }
+    }
+})

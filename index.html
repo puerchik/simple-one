@@ -10,7 +10,7 @@
     <div class="wrapper">
       <header class="header">
         <div class="header__inner container">
-          <a href="#" class="header__logo">
+          <a href="#" class="header__logo hidden-tablet">
             <img
               class="header__logo-img"
               width="174"
@@ -21,7 +21,17 @@
             />
           </a>
           <div class="header__bar">
-            <div class="header__search">
+            <button class="header__bar-categories-button visible-tablet" type="button">
+              <img
+                class="sheader__bar-categories-img"
+                width="20"
+                height="20"
+                src="/images/icons/sidebar-dark.svg"
+                alt="show list of navigation links"
+                loading="lazy"
+              />
+            </button>
+            <div class="header__search hidden-tablet">
               <input class="header__search-input input" placeholder="Поиск" type="search" />
             </div>
             <div class="header__user">
@@ -33,7 +43,7 @@
                 alt="User avatar"
                 loading="lazy"
               />
-              <span class="header__user-name">Максим Галактионов</span>
+              <span class="header__user-name hidden-tablet">Максим Галактионов</span>
               <a class="header__user-settings icon-button" href="#">
                 <img
                   class="header__user-settings-img"
@@ -158,17 +168,36 @@
             <div class="content__header">
               <h3 class="content__header-title">Подзадача</h3>
               <div class="content__header-actions">
+                <div class="kebab-menu visible-tablet" id="kebabMenu">
+                  <span class="icon-button kebab-menu__button">⋮</span>
+                  <div class="dropdown-content" id="dropdownContent">
+                    <button
+                      form="subtask-form"
+                      class="content__header-button button button-blue"
+                      type="submit"
+                    >
+                      Сохранить
+                    </button>
+                    <button form="subtask-form" class="content__header-button button" type="submit">
+                      Сохранить и выйти
+                    </button>
+                  </div>
+                </div>
                 <button id="dialog-opener" class="content__header-button button" type="button">
                   Создать
                 </button>
                 <button
                   form="subtask-form"
-                  class="content__header-button button button-blue"
+                  class="content__header-button button button-blue hidden-tablet"
                   type="submit"
                 >
                   Сохранить
                 </button>
-                <button form="subtask-form" class="content__header-button button" type="submit">
+                <button
+                  form="subtask-form"
+                  class="content__header-button hidden-tablet button"
+                  type="submit"
+                >
                   Сохранить и выйти
                 </button>
               </div>

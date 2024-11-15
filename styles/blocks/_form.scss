@@ -3,6 +3,11 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 
+  @include desktop-small {
+    display: flex;
+    flex-direction: column;
+  }
+
   &-modal {
     display: flex;
     flex-direction: column;
@@ -30,7 +35,8 @@
       position: relative;
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      row-gap: 3px;
+      column-gap: 4px;
       padding: 3px;
       padding-right: 30px;
 
@@ -78,6 +84,11 @@
       border: 1px solid var(--color-blue-alt);
       border-radius: var(--border-radius);
       background-color: var(--color-blue-light);
+
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
 
       &-multiple {
         position: relative;

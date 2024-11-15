@@ -1,0 +1,26 @@
+.action-button {
+  margin-right: 10px;
+}
+
+.kebab-menu {
+  position: relative;
+  cursor: pointer;
+
+  &__button {
+    padding: 6px 15px;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+
+  background-color: var(--color-light);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+
+  @include hover {
+    opacity: 0.7;
+  }
+}

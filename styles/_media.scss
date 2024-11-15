@@ -1,21 +1,13 @@
 $desktop: 1920px;
 
-$desktop-medium: 1200px;
+$desktop-small: 992px;
 
-$desktop-small: 991px;
-
-$tablet: 767px;
+$tablet: 767.5px;
 
 $mobile: 320px;
 
 @mixin desktop {
   @media (max-width: $desktop) {
-    @content;
-  }
-}
-
-@mixin desktop-medium {
-  @media (max-width: $desktop-medium) {
     @content;
   }
 }
@@ -28,6 +20,12 @@ $mobile: 320px;
 
 @mixin tablet {
   @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet-above {
+  @media (min-width: $tablet) {
     @content;
   }
 }

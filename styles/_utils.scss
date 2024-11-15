@@ -1,7 +1,24 @@
 .container {
   padding-inline: var(--container-padding-x);
+
+  @include tablet {
+    --container-padding-x: 22px;
+    padding-right: 16px;
+  }
 }
 
 .visually-hidden {
   @include visually-hidden;
+}
+
+.visible-tablet {
+  @include tablet-above {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
 }
