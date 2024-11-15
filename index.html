@@ -159,10 +159,14 @@
               <h3 class="content__header-title">Подзадача</h3>
               <div class="content__header-actions">
                 <button class="content__header-button button" type="button">Создать</button>
-                <button class="content__header-button button button-blue" type="button">
+                <button
+                  form="subtask-form"
+                  class="content__header-button button button-blue"
+                  type="submit"
+                >
                   Сохранить
                 </button>
-                <button class="content__header-button button" type="button">
+                <button form="subtask-form" class="content__header-button button" type="submit">
                   Сохранить и выйти
                 </button>
               </div>
@@ -172,7 +176,7 @@
                 STSK0004783 На инциденте, запросе, проблеме, в статусе закрыто некоторые поля
                 остаются редактируемыми для агента если он Caller
               </h1>
-              <form class="content__body-form form">
+              <form id="subtask-form" class="content__body-form form">
                 <div class="form__input-wrapper">
                   <label class="form__label" for="form-topic"
                     ><span class="form__label_required">*</span> Тема</label
@@ -186,7 +190,7 @@
                   />
                 </div>
                 <div class="form__input-wrapper">
-                  <label class="form__label" for="form-status">Статус </label>
+                  <label class="form__label" for="form-status">Статус</label>
                   <input
                     name="status"
                     value="Новая"
@@ -196,7 +200,7 @@
                   />
                 </div>
                 <div class="form__input-wrapper">
-                  <label class="form__label" for="form-description">Описание </label>
+                  <label class="form__label" for="form-description">Описание</label>
                   <input
                     name="description"
                     type="text"
@@ -205,14 +209,26 @@
                   />
                 </div>
                 <div class="form__input-wrapper">
-                  <label class="form__label" for="form-product">Продукт </label>
-                  <input
-                    name="product"
-                    value="Paltform"
-                    type="text"
-                    class="form__input input"
-                    id="form-product"
-                  />
+                  <label class="form__label" for="form-product">Продукт</label>
+                  <div class="form__input-button-wrapper">
+                    <input
+                      name="product"
+                      value="Paltform"
+                      type="text"
+                      class="form__input input"
+                      id="form-product"
+                    />
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/form-search.svg"
+                        alt="search"
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="form-working-notes"
@@ -227,7 +243,7 @@
                   />
                 </div>
                 <div class="form__input-wrapper">
-                  <label class="form__label" for="form-priority">Приоритет </label>
+                  <label class="form__label" for="form-priority">Приоритет</label>
                   <input
                     name="priority"
                     value="Средний"
@@ -236,25 +252,292 @@
                     id="form-priority"
                   />
                 </div>
-
                 <div class="form__input-wrapper">
-                  <label class="form__label" for="form-responsible">Ответственный </label>
+                  <label class="form__label" for="form-responsible">Ответственный</label>
                   <select class="form__select" name="responsible" id="form-responsible">
-                    <option selected value="">Константин Константинопольский</option>
-                    <option value="">Артём Подпрыгайко-Саппортов</option>
-                    <option value="">Михаил Вортенов</option>
+                    <option selected value="konstantinKonstantinopolskij">
+                      Константин Константинопольский
+                    </option>
+                    <option value="artyomPodprygajkoSapportov">Артём Подпрыгайко-Саппортов</option>
+                    <option value="mihailVortenov">Михаил Вортенов</option>
                   </select>
-                  <div
-                    id="form-responsible-wrapper"
-                    class="form__input form__input-selected input"
-                  ></div>
+                  <div class="form__input-button-wrapper">
+                    <div
+                      id="form-responsible-wrapper"
+                      class="form__input form__input-selected input"
+                    >
+                      <button class="form__input-selected-button" type="button">
+                        <img
+                          class="form__input-selected-button-img"
+                          width="20"
+                          height="20"
+                          src="./images/icons/clear-all.svg"
+                          alt="clear all"
+                          loading="lazy"
+                        />
+                      </button>
+                    </div>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/plus.svg"
+                        alt="add"
+                        loading="lazy"
+                      />
+                    </button>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/form-search.svg"
+                        alt="search"
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
                 </div>
-
                 <div class="form__input-wrapper">
-                  <label class="form__label" for="form-"
-                    ><span class="form__label_required">*</span>
-                  </label>
-                  <input name="" type="text" class="form__input input" id="form-" />
+                  <label class="form__label" for="form-group">Группа</label>
+                  <select class="form__select" name="responsible" id="form-group">
+                    <option selected value="supportGroup">Support Group</option>
+                    <option value="marketingGroup">Marketing Group</option>
+                    <option value="salesGroup">Sales Group</option>
+                  </select>
+                  <div class="form__input-button-wrapper">
+                    <div id="form-group-wrapper" class="form__input form__input-selected input">
+                      <button class="form__input-selected-button" type="button">
+                        <img
+                          class="form__input-selected-button-img"
+                          width="20"
+                          height="20"
+                          src="./images/icons/clear-all.svg"
+                          alt="clear all"
+                          loading="lazy"
+                        />
+                      </button>
+                    </div>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/plus.svg"
+                        alt="add"
+                        loading="lazy"
+                      />
+                    </button>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/form-search.svg"
+                        alt="search"
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="form__input-wrapper form__input-full-width">
+                  <label class="form__label" for="form-comments">Комментарии</label>
+                  <input name="comments" type="text" class="form__input input" id="form-comments" />
+                </div>
+                <div class="form__input-wrapper form__input-full-width">
+                  <label class="form__label" for="form-coordinating">Согласующие</label>
+                  <select multiple class="form__select" name="coordinating" id="form-coordinating">
+                    <option selected value="andrejPivovarov">Андрей Пивоваров</option>
+                    <option selected value="maksimGalaktionov">Максим Галактионов</option>
+                    <option selected value="allaLin">Алла Лин</option>
+                    <option selected value="konstantinKonstantinopolskijKonstantinovich">
+                      Константин Константинопольский Константинович
+                    </option>
+                    <option selected value="igorIvanchenko">Игорь Иванченко</option>
+                    <option selected value="yuliyaEjcharovna">Юлия Эйчаровна</option>
+                    <option selected value="artyomPodprygajkoSapportov">
+                      Артём Подпрыгайко-Саппортов
+                    </option>
+                    <option selected value="ilyaVaznec">Илья Вазнец</option>
+                    <option selected value="mihailVortenov">Михаил Вортенов</option>
+                    <option selected value="natalyaNashevna">Наталья Нашевна</option>
+                    <option selected value="evgeniyaItamovna">Евгения Итамовна</option>
+                    <option selected value="alisaKiralchuk">Алиса Киральчук</option>
+                    <option value="matveevVissarion">Матвеев Виссарион</option>
+                    <option value="rusakovAlan">Русаков Алан</option>
+                    <option value="seliverstovMartin">Селиверстов Мартин</option>
+                  </select>
+                  <div class="form__input-button-wrapper">
+                    <div
+                      id="form-coordinating-wrapper"
+                      class="form__input form__input-selected input"
+                    >
+                      <button class="form__input-selected-button" type="button">
+                        <img
+                          class="form__input-selected-button-img"
+                          width="20"
+                          height="20"
+                          src="./images/icons/clear-all.svg"
+                          alt="clear all"
+                          loading="lazy"
+                        />
+                      </button>
+                    </div>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/plus.svg"
+                        alt="add"
+                        loading="lazy"
+                      />
+                    </button>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/form-search.svg"
+                        alt="search"
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="form__input-wrapper">
+                  <label class="form__label" for="form-when-open">Когда открыто</label>
+                  <div class="form__input-button-wrapper">
+                    <input
+                      name="when-open"
+                      type="text"
+                      class="form__input input"
+                      id="form-when-open"
+                    />
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/calendar.svg"
+                        alt="calendar"
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="form__input-wrapper">
+                  <label class="form__label" for="form-when-created">Когда создано</label>
+                  <div class="form__input-button-wrapper">
+                    <input
+                      name="when-created"
+                      value="2024-10-22"
+                      type="date"
+                      class="form__input input"
+                      id="form-when-created"
+                    />
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/calendar.svg"
+                        alt="calendar"
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="form__input-wrapper">
+                  <label class="form__label" for="form-who-opened">Кем открыто</label>
+                  <select class="form__select" name="who-opened" id="form-who-opened">
+                    <option selected value="andrejPivovarov">Андрей Пивоваров</option>
+                    <option value="evgeniyaItamovna">Евгения Итамовна</option>
+                    <option value="alisaKiralchuk">Алиса Киральчук</option>
+                  </select>
+                  <div class="form__input-button-wrapper">
+                    <div
+                      id="form-who-opened-wrapper"
+                      class="form__input form__input-selected input"
+                    >
+                      <button class="form__input-selected-button" type="button">
+                        <img
+                          class="form__input-selected-button-img"
+                          width="20"
+                          height="20"
+                          src="./images/icons/clear-all.svg"
+                          alt="clear all"
+                          loading="lazy"
+                        />
+                      </button>
+                    </div>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/plus.svg"
+                        alt="add"
+                        loading="lazy"
+                      />
+                    </button>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/form-search.svg"
+                        alt="search"
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="form__input-wrapper">
+                  <label class="form__label" for="form-created-by">Кем создано</label>
+                  <select class="form__select" name="created-by" id="form-created-by">
+                    <option selected value="andrejPivovarov">Андрей Пивоваров</option>
+                    <option value="evgeniyaItamovna">Евгения Итамовна</option>
+                    <option value="alisaKiralchuk">Алиса Киральчук</option>
+                  </select>
+                  <div class="form__input-button-wrapper">
+                    <div
+                      id="form-created-by-wrapper"
+                      class="form__input form__input-selected input"
+                    >
+                      <button class="form__input-selected-button" type="button">
+                        <img
+                          class="form__input-selected-button-img"
+                          width="20"
+                          height="20"
+                          src="./images/icons/clear-all.svg"
+                          alt="clear all"
+                          loading="lazy"
+                        />
+                      </button>
+                    </div>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/plus.svg"
+                        alt="add"
+                        loading="lazy"
+                      />
+                    </button>
+                    <button class="form__input-button icon-button" type="button">
+                      <img
+                        class="form__input-button-img"
+                        width="20"
+                        height="20"
+                        src="./images/icons/form-search.svg"
+                        alt="search"
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
                 </div>
               </form>
             </section>
