@@ -32,7 +32,7 @@ function displaySelected(selectId, wrapperId) {
             const closeImg = document.createElement('img')
 
             btn.type = 'button'
-            closeImg.src = './../images/icons/close.svg'
+            closeImg.src = './images/icons/close.svg'
             btn.classList.add('form__select-selected-button')
             p.classList.add('form__select-selected-multiple')
             p.appendChild(btn)
