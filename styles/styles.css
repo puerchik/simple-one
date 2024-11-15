@@ -50,6 +50,7 @@ button {
 html,
 body {
   height: 100%;
+  scrollbar-gutter: stable;
 }
 
 html,
@@ -270,6 +271,14 @@ a {
   }
 }
 
+.modal::backdrop {
+  background-color: rgba(11, 12, 14, 0.4);
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -464,6 +473,11 @@ a {
   flex-direction: column;
   gap: 24px;
 }
+.content__body-modal {
+  padding: 0 16px;
+  padding-bottom: 16px;
+  top: 0;
+}
 .content__body-title {
   font-family: Montserrat;
   font-size: 24px;
@@ -473,17 +487,37 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.content__modal {
+  top: 16px;
+  width: 800px;
+  padding: 0;
+  border: none;
+  background-color: var(--color-light);
+}
+.content__modal-header {
+  position: relative;
+  top: 0;
+  width: 100%;
+}
 
 .form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
+.form-modal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
 .form__label {
   font-weight: 600;
 }
 .form__label_required {
   color: var(--color-red);
+}
+.form__input {
+  padding-right: 0;
 }
 .form__input-wrapper {
   display: flex;

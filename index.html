@@ -158,7 +158,9 @@
             <div class="content__header">
               <h3 class="content__header-title">Подзадача</h3>
               <div class="content__header-actions">
-                <button class="content__header-button button" type="button">Создать</button>
+                <button id="dialog-opener" class="content__header-button button" type="button">
+                  Создать
+                </button>
                 <button
                   form="subtask-form"
                   class="content__header-button button button-blue"
@@ -545,6 +547,407 @@
         </div>
       </main>
     </div>
+    <dialog id="content-modal" class="content__modal modal">
+      <div class="modal__wrapper">
+        <div class="content__header content__modal-header">
+          <h3 class="content__header-title">Подзадача</h3>
+          <div class="content__header-actions">
+            <button
+              form="subtask-form-modal"
+              class="content__header-button button button-blue"
+              type="submit"
+            >
+              Сохранить
+            </button>
+            <button
+              id="modal-close-button"
+              form="subtask-form-modal"
+              class="content__header-button button"
+              type="button"
+            >
+              Отменить
+            </button>
+          </div>
+        </div>
+        <section class="content__body content__body-modal">
+          <h1 class="content__body-title">Новая запись</h1>
+          <form id="subtask-form-modal" class="content__body-form form-modal">
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-topic-modal"
+                ><span class="form__label_required">*</span> Тема</label
+              >
+              <input
+                name="topic"
+                value="На инциденте, запросе, проблеме, в статусе закрыто некоторые поля остаются редактируемыми для агента если он Caller"
+                type="text"
+                class="form__input input"
+                id="form-topic-modal"
+              />
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-status-modal">Статус</label>
+              <input
+                name="status"
+                value="Новая"
+                type="text"
+                class="form__input input"
+                id="form-status-modal"
+              />
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-description-modal">Описание</label>
+              <input
+                name="description"
+                type="text"
+                class="form__input input"
+                id="form-description-modal"
+              />
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-product-modal">Продукт</label>
+              <div class="form__input-button-wrapper">
+                <input
+                  name="product"
+                  value="Paltform"
+                  type="text"
+                  class="form__input input"
+                  id="form-product-modal"
+                />
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/form-search.svg"
+                    alt="search"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-working-notes-modal"
+                ><span class="form__label_required">*</span> Рабочие заметки
+              </label>
+              <input
+                name="working-notes"
+                value="Проверить ACL id=172830402014193655"
+                type="text"
+                class="form__input input"
+                id="form-working-notes-modal"
+              />
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-priority-modal">Приоритет</label>
+              <input
+                name="priority"
+                value="Средний"
+                type="text"
+                class="form__input input"
+                id="form-priority-modal"
+              />
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-responsible-modal">Ответственный</label>
+              <select class="form__select" name="responsible" id="form-responsible-modal">
+                <option selected value="konstantinKonstantinopolskij">
+                  Константин Константинопольский
+                </option>
+                <option value="artyomPodprygajkoSapportov">Артём Подпрыгайко-Саппортов</option>
+                <option value="mihailVortenov">Михаил Вортенов</option>
+              </select>
+              <div class="form__input-button-wrapper">
+                <div
+                  id="form-responsible-modal-wrapper"
+                  class="form__input form__input-selected input"
+                >
+                  <button class="form__input-selected-button" type="button">
+                    <img
+                      class="form__input-selected-button-img"
+                      width="20"
+                      height="20"
+                      src="./images/icons/clear-all.svg"
+                      alt="clear all"
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/plus.svg"
+                    alt="add"
+                    loading="lazy"
+                  />
+                </button>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/form-search.svg"
+                    alt="search"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-group-modal">Группа</label>
+              <select class="form__select" name="responsible" id="form-group-modal">
+                <option selected value="supportGroup">Support Group</option>
+                <option value="marketingGroup">Marketing Group</option>
+                <option value="salesGroup">Sales Group</option>
+              </select>
+              <div class="form__input-button-wrapper">
+                <div id="form-group-modal-wrapper" class="form__input form__input-selected input">
+                  <button class="form__input-selected-button" type="button">
+                    <img
+                      class="form__input-selected-button-img"
+                      width="20"
+                      height="20"
+                      src="./images/icons/clear-all.svg"
+                      alt="clear all"
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/plus.svg"
+                    alt="add"
+                    loading="lazy"
+                  />
+                </button>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/form-search.svg"
+                    alt="search"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="form__input-wrapper form__input-full-width">
+              <label class="form__label" for="form-comments-modal">Комментарии</label>
+              <input
+                name="comments"
+                type="text"
+                class="form__input input"
+                id="form-comments-modal"
+              />
+            </div>
+            <div class="form__input-wrapper form__input-full-width">
+              <label class="form__label" for="form-coordinating-modal">Согласующие</label>
+              <select
+                multiple
+                class="form__select"
+                name="coordinating"
+                id="form-coordinating-modal"
+              >
+                <option selected value="andrejPivovarov">Андрей Пивоваров</option>
+                <option selected value="maksimGalaktionov">Максим Галактионов</option>
+                <option selected value="allaLin">Алла Лин</option>
+                <option selected value="konstantinKonstantinopolskijKonstantinovich">
+                  Константин Константинопольский Константинович
+                </option>
+                <option selected value="igorIvanchenko">Игорь Иванченко</option>
+                <option selected value="yuliyaEjcharovna">Юлия Эйчаровна</option>
+                <option selected value="artyomPodprygajkoSapportov">
+                  Артём Подпрыгайко-Саппортов
+                </option>
+                <option selected value="ilyaVaznec">Илья Вазнец</option>
+                <option selected value="mihailVortenov">Михаил Вортенов</option>
+                <option selected value="natalyaNashevna">Наталья Нашевна</option>
+                <option selected value="evgeniyaItamovna">Евгения Итамовна</option>
+                <option selected value="alisaKiralchuk">Алиса Киральчук</option>
+                <option value="matveevVissarion">Матвеев Виссарион</option>
+                <option value="rusakovAlan">Русаков Алан</option>
+                <option value="seliverstovMartin">Селиверстов Мартин</option>
+              </select>
+              <div class="form__input-button-wrapper">
+                <div
+                  id="form-coordinating-modal-wrapper"
+                  class="form__input form__input-selected input"
+                >
+                  <button class="form__input-selected-button" type="button">
+                    <img
+                      class="form__input-selected-button-img"
+                      width="20"
+                      height="20"
+                      src="./images/icons/clear-all.svg"
+                      alt="clear all"
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/plus.svg"
+                    alt="add"
+                    loading="lazy"
+                  />
+                </button>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/form-search.svg"
+                    alt="search"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-when-open-modal">Когда открыто</label>
+              <div class="form__input-button-wrapper">
+                <input
+                  name="when-open"
+                  type="text"
+                  class="form__input input"
+                  id="form-when-open-modal"
+                />
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/calendar.svg"
+                    alt="calendar"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-when-created-modal">Когда создано</label>
+              <div class="form__input-button-wrapper">
+                <input
+                  name="when-created"
+                  value="2024-10-22"
+                  type="date"
+                  class="form__input input"
+                  id="form-when-created-modal"
+                />
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/calendar.svg"
+                    alt="calendar"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-who-opened-modal">Кем открыто</label>
+              <select class="form__select" name="who-opened" id="form-who-opened-modal">
+                <option selected value="andrejPivovarov">Андрей Пивоваров</option>
+                <option value="evgeniyaItamovna">Евгения Итамовна</option>
+                <option value="alisaKiralchuk">Алиса Киральчук</option>
+              </select>
+              <div class="form__input-button-wrapper">
+                <div
+                  id="form-who-opened-modal-wrapper"
+                  class="form__input form__input-selected input"
+                >
+                  <button class="form__input-selected-button" type="button">
+                    <img
+                      class="form__input-selected-button-img"
+                      width="20"
+                      height="20"
+                      src="./images/icons/clear-all.svg"
+                      alt="clear all"
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/plus.svg"
+                    alt="add"
+                    loading="lazy"
+                  />
+                </button>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/form-search.svg"
+                    alt="search"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="form-created-by-modal">Кем создано</label>
+              <select class="form__select" name="created-by" id="form-created-by-modal">
+                <option selected value="andrejPivovarov">Андрей Пивоваров</option>
+                <option value="evgeniyaItamovna">Евгения Итамовна</option>
+                <option value="alisaKiralchuk">Алиса Киральчук</option>
+              </select>
+              <div class="form__input-button-wrapper">
+                <div
+                  id="form-created-by-modal-wrapper"
+                  class="form__input form__input-selected input"
+                >
+                  <button class="form__input-selected-button" type="button">
+                    <img
+                      class="form__input-selected-button-img"
+                      width="20"
+                      height="20"
+                      src="./images/icons/clear-all.svg"
+                      alt="clear all"
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/plus.svg"
+                    alt="add"
+                    loading="lazy"
+                  />
+                </button>
+                <button class="form__input-button icon-button" type="button">
+                  <img
+                    class="form__input-button-img"
+                    width="20"
+                    height="20"
+                    src="./images/icons/form-search.svg"
+                    alt="search"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </dialog>
     <script src="./js/main.js"></script>
   </body>
 </html>

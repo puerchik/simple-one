@@ -3,6 +3,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 
+  &-modal {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
   &__label {
     font-weight: 600;
 
@@ -12,6 +18,8 @@
   }
 
   &__input {
+    padding-right: 0;
+
     &-wrapper {
       display: flex;
       flex-direction: column;
