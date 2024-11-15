@@ -124,15 +124,12 @@ svg * {
   --color-red: #b21f00;
   --border: 1px solid var(--color-gray);
   --border-radius: 4px;
-  --container-width: 1888px;
   --container-padding-x: 16px;
   --transition-duration: 0.2s;
   --font-family-base: "Open Sans", sans-serif;
 }
 
 .container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-  margin-inline: auto;
   padding-inline: var(--container-padding-x);
 }
 
@@ -480,7 +477,7 @@ a {
 .form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 15px;
 }
 .form__label {
   font-weight: 600;
@@ -498,15 +495,16 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  padding: 4px;
+  padding: 3px;
+  padding-right: 30px;
 }
 .form__input-selected-button {
   padding: 0;
   background-color: transparent;
   border: none;
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 2px;
+  top: 5px;
 }
 @media (hover: hover) {
   .form__input-selected-button:hover {
@@ -542,7 +540,7 @@ a {
   display: none;
 }
 .form__select-selected {
-  padding: 2px 8px;
+  padding: 2px 7px;
   border: 1px solid var(--color-blue-alt);
   border-radius: var(--border-radius);
   background-color: var(--color-blue-light);

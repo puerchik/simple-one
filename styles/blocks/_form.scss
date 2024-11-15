@@ -1,7 +1,7 @@
 .form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 15px;
 
   &__label {
     font-weight: 600;
@@ -23,14 +23,15 @@
       display: flex;
       flex-wrap: wrap;
       gap: 4px;
-      padding: 4px;
+      padding: 3px;
+      padding-right: 30px;
 
       &-button {
         @include reset-button;
 
         position: absolute;
-        right: 8px;
-        top: 8px;
+        right: 2px;
+        top: 5px;
 
         @include hover {
           opacity: 0.7;
@@ -65,7 +66,7 @@
     display: none;
 
     &-selected {
-      padding: 2px 8px;
+      padding: 2px 7px;
       border: 1px solid var(--color-blue-alt);
       border-radius: var(--border-radius);
       background-color: var(--color-blue-light);
