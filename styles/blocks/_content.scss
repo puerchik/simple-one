@@ -31,7 +31,13 @@
 
     @include tablet {
       width: 100%;
-      top: 56px;
+      top: 58px;
+    }
+
+    @include mobile {
+      &-button-close {
+        padding: 6px;
+      }
     }
 
     &-scrolled {
@@ -80,7 +86,7 @@
     }
 
     &-modal {
-      padding: 0 16px;
+      padding: 16px;
       padding-bottom: 16px;
       top: 0;
     }
@@ -123,6 +129,10 @@
       position: relative;
       top: 0;
       width: 100%;
+
+      @include mobile {
+        border-bottom: var(--border);
+      }
     }
   }
 }

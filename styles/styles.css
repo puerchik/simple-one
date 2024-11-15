@@ -166,6 +166,18 @@ svg * {
   }
 }
 
+@media (min-width: 321px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 321px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
 body {
   font-family: var(--font-family-base);
   font-size: 14px;
@@ -529,7 +541,12 @@ a {
 @media (max-width: 767.5px) {
   .content__header {
     width: 100%;
-    top: 56px;
+    top: 58px;
+  }
+}
+@media (max-width: 321px) {
+  .content__header-button-close {
+    padding: 6px;
   }
 }
 .content__header-scrolled {
@@ -577,7 +594,7 @@ a {
   }
 }
 .content__body-modal {
-  padding: 0 16px;
+  padding: 16px;
   padding-bottom: 16px;
   top: 0;
 }
@@ -617,6 +634,11 @@ a {
   position: relative;
   top: 0;
   width: 100%;
+}
+@media (max-width: 321px) {
+  .content__modal-header {
+    border-bottom: var(--border);
+  }
 }
 
 .form {

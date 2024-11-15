@@ -591,10 +591,18 @@
             <button
               id="modal-close-button"
               form="subtask-form-modal"
-              class="content__header-button button"
+              class="content__header-button content__header-button-close button"
               type="button"
             >
-              Отменить
+              <span class="hidden-mobile">Отменить</span>
+              <img
+                class="content__header-button-img visible-mobile"
+                width="20"
+                height="20"
+                src="./images/icons/close.svg"
+                alt="close"
+                loading="lazy"
+              />
             </button>
           </div>
         </div>
