@@ -113,6 +113,10 @@
       top: 0;
       width: 100%;
       margin: 0;
+
+      &:-internal-dialog-in-top-layer {
+        max-height: 100%;
+      }
     }
 
     &-header {
