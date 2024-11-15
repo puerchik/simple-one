@@ -541,7 +541,8 @@ a {
 @media (max-width: 767.5px) {
   .content__header {
     width: 100%;
-    top: 57px;
+    top: 56px;
+    border-top: var(--border);
   }
 }
 @media (max-width: 321px) {

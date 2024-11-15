@@ -31,7 +31,8 @@
 
     @include tablet {
       width: 100%;
-      top: 57px;
+      top: 56px;
+      border-top: var(--border);
     }
 
     @include mobile {
